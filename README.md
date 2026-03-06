@@ -41,28 +41,29 @@ Attach the 8 ohm speaker to the 3d printed lid, pointing downwards. Then connect
 ## Prerequisites
 - CM5 mounted on IO Board  
 - NVMe SSD in USB/PCIe adapter  
-- microSD card ≥8 GB  
-- Monitor, keyboard, and mouse for first boot
+- microSD card ≥8 GB (for first boot)  
+- Monitor, keyboard, and mouse for desktop setup  
+- A **second computer** to flash the SD card and/or NVMe
 
 ---
 
-## Step 1: Prepare microSD
-1. Download **Raspberry Pi OS Full Desktop (Trixie)** from [Raspberry Pi OS Downloads](https://www.raspberrypi.com/software/operating-systems/).  
-2. Flash SD card using **Raspberry Pi Imager** or:
+## Step 1: Prepare microSD on a second computer
+1. Download and install [Raspberry Pi Imager](https://www.raspberrypi.com/software/) on another computer.  
+2. Insert your SD card.  
+3. Select OS → **Raspberry Pi OS Full Desktop (Trixie)**.  
+4. Select the SD card as target.  
+5. (Optional) Open **Advanced Options** (gear icon) to set hostname, enable SSH, configure Wi-Fi, and locale.  
+6. Click **Write** and wait for completion.  
 
-```bash
-sudo dd if=raspios-trixie-full-arm64.img of=/dev/sdX bs=4M status=progress conv=fsync
-```
-
-3. Optionally enable SSH, Wi-Fi, locale, and hostname in the Imager.
+> **Note:** This initial flashing must be done on a separate computer before first boot on the CM5.
 
 ---
 
 ## Step 2: Boot CM5 from SD card
 - Insert SD card into the IO Board.  
 - Connect **monitor, keyboard, and mouse**.  
-- Power on. The desktop environment should appear.  
-- Open a terminal and update system:
+- Power on — the desktop environment should appear.  
+- Open a terminal and update the system:
 
 ```bash
 sudo apt update && sudo apt full-upgrade -y
@@ -111,27 +112,24 @@ lsblk
 
 ```bash
 sudo wipefs -a /dev/nvme0n1
-sudo dd if=/dev/zero of=/dev/nvme0n1 bs=4M
 ```
 
 ---
 
-## Step 6: Flash NVMe
-Download Raspberry Pi OS Lite (Trixie) for NVMe installation:
+## Step 6: Flash NVMe with Raspberry Pi Imager (optional on second computer)
+1. On a **second computer** or on the CM5, open **Raspberry Pi Imager**.  
+2. Select OS → **Raspberry Pi OS Lite (Trixie)**.  
+3. Select NVMe SSD as target.  
+4. (Optional) Configure Advanced Options for SSH, Wi-Fi, and locale.  
+5. Click **Write** and wait for completion.
 
-```bash
-wget https://downloads.raspberrypi.com/raspios_lite_arm64/images/.../raspios-trixie-arm64-lite.img.xz
-```
-
-Flash the NVMe:
-
-```bash
-sudo rpi-imager --cli ./raspios-trixie-arm64-lite.img.xz /dev/nvme0n1
-```
+> Alternatively, if using CM5 CLI, you can use `rpi-imager --cli <image> /dev/nvme0n1`.
 
 ---
 
-## Step 7: Copy configuration files
+## Step 7: Copy configuration for headless boot (optional)
+If you want preconfigured settings on NVMe, mount the NVMe boot partition:
+
 ```bash
 sudo mkdir /mnt/nvfat
 sudo mount /dev/nvme0n1p1 /mnt/nvfat
@@ -152,7 +150,7 @@ quiet splash plymouth.ignore-serial-consoles cfg80211.ieee80211_regdom=US
 ## Step 8: Boot from NVMe
 1. Shut down CM5.  
 2. Remove SD card.  
-3. Power on CM5 — it should boot from NVMe and display the full desktop.
+3. Power on CM5 — it should now boot from NVMe and display the full desktop.
 
 ---
 
@@ -167,6 +165,7 @@ sudo reboot
 - Configure Wi-Fi, user accounts, and desktop applications as desired.
 
 
+
 # Final Steps
 
 In your running RaspiOS, edit `/etc/firmware/config.txt` to include
@@ -179,6 +178,7 @@ dtoverlay=hifiberry-dac
 reboot, and then test with:
 
 ```speaker-test -c1 -twav -D hw:0,0```
+
 
 
 
