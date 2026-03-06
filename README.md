@@ -36,7 +36,8 @@ Attach the 8 ohm speaker to the 3d printed lid, pointing downwards. Then connect
 | SPK+      | Speaker + |
 | SPK−      | Speaker − |
 
-Place the rubber feet on the bottom of the unit, to give the speaker some room. Slide the cover on. Screw shut (TODO: Add images)
+Attach the CM5 io board to the top of the enclosure.
+Place the rubber feet on the second (bottom part) of the enclosure, to give the speaker some room. Slide the cover on. Screw shut (TODO: Add images)
 
 # Putting RaspiOS on the NVMe
 
@@ -180,6 +181,7 @@ dtoverlay=hifiberry-dac
 reboot, and then test with:
 
 ```speaker-test -c1 -twav -D hw:0,0```
+
 
 
 
