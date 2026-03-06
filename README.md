@@ -50,7 +50,7 @@ Attach the 8 ohm speaker to the 3d printed lid, pointing downwards. Then connect
 ## Step 1: Prepare microSD on a second computer
 1. Download and install [Raspberry Pi Imager](https://www.raspberrypi.com/software/) on another computer.  
 2. Insert your SD card.  
-3. Select OS → **Raspberry Pi OS Full Desktop (Trixie)**.  
+3. Select OS -> **Raspberry Pi OS Full Desktop (Trixie)**.  
 4. Select the SD card as target.  
 5. (Optional) Open **Advanced Options** (gear icon) to set hostname, enable SSH, configure Wi-Fi, and locale.  
 6. Click **Write** and wait for completion.  
@@ -62,7 +62,7 @@ Attach the 8 ohm speaker to the 3d printed lid, pointing downwards. Then connect
 ## Step 2: Boot CM5 from SD card
 - Insert SD card into the IO Board.  
 - Connect **monitor, keyboard, and mouse**.  
-- Power on — the desktop environment should appear.  
+- Power on - the desktop environment should appear.  
 - Open a terminal and update the system:
 
 ```bash
@@ -118,7 +118,7 @@ sudo wipefs -a /dev/nvme0n1
 
 ## Step 6: Flash NVMe with Raspberry Pi Imager (optional on second computer)
 1. On a **second computer** or on the CM5, open **Raspberry Pi Imager**.  
-2. Select OS → **Raspberry Pi OS Lite (Trixie)**.  
+2. Select OS -> **Raspberry Pi OS Lite (Trixie)**.  
 3. Select NVMe SSD as target.  
 4. (Optional) Configure Advanced Options for SSH, Wi-Fi, and locale.  
 5. Click **Write** and wait for completion.
@@ -161,7 +161,7 @@ sudo rpi-update
 sudo reboot
 ```
 
-- Optional: expand filesystem via `sudo raspi-config` → “Expand Filesystem”  
+- Optional: expand filesystem via `sudo raspi-config` -> “Expand Filesystem”  
 - Configure Wi-Fi, user accounts, and desktop applications as desired.
 
 
@@ -178,6 +178,7 @@ dtoverlay=hifiberry-dac
 reboot, and then test with:
 
 ```speaker-test -c1 -twav -D hw:0,0```
+
 
 
 
