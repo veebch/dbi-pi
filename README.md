@@ -36,6 +36,8 @@ Attach the 8 ohm speaker to the 3d printed lid, pointing downwards. Then connect
 | SPK+      | Speaker + |
 | SPK−      | Speaker − |
 
+Place the rubber feet on the bottom of the unit, to give the speaker some room. Slide the cover on. Screw shut (TODO: Add images)
+
 # Putting RaspiOS on the NVMe
 
 ## Prerequisites
