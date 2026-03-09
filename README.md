@@ -173,7 +173,7 @@ sudo reboot
 
 # Final Steps
 
-In your running RaspiOS, edit `/etc/firmware/config.txt` to include
+In your running RaspiOS, edit `/boot/firmware/config.txt` to include
 
 ```
 dtparam=i2s=on
@@ -186,6 +186,7 @@ reboot, and then test the speaker with:
 
 Congratulations, you now have an little computer that is a nice combo of old and new. If you want to get things looking authentic from a software point of view, try
 installing [Maxx](https://docs.maxxinteractive.com/books/octane-v22-installation-guide/page/debian-guide-x64-untested-wip)
+
 
 
 
