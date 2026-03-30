@@ -4,7 +4,7 @@
 
 # DBI Pi
 
-The lack of modularity on all in one computers (eg the Raspberry Pi 500+) was enough to make us build an alternative desktop solution out of a Compute Module 5. The idea being to make something a bit more future proof that doesn't involve a perfectly good keyboard becoming ewaste once the brains of the machine start to look dated. 
+The lack of modularity on all-in-one computers (eg the Raspberry Pi 500+) was enough to make us build an alternative desktop solution out of a Compute Module 5. The idea being to make something a bit more future proof than an all-in-one that retains some of the charm/convenience but doesn't involve a perfectly good keyboard becoming ewaste once the brains of the machine start to look dated. 
 
 It's has a footprint that is about ten times smaller and is a few hundred times more powerful than the original. It runs RaspiOS.
 
