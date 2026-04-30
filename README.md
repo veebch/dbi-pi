@@ -186,8 +186,7 @@ reboot, and then test the speaker with:
 
 ```speaker-test -c1 -twav -D hw:0,0```
 
-Congratulations, you now have an little computer that is a nice combo of old and new. If you want to get things looking authentic from a software point of view, try
-installing [Maxx](https://docs.maxxinteractive.com/books/octane-v22-installation-guide/page/debian-guide-x64-untested-wip)
+Congratulations, you now have an little computer that is a nice combo of old and new. 
 
 
 
