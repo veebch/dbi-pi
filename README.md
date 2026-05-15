@@ -184,7 +184,7 @@ dtoverlay=hifiberry-dac
 
 Congratulations, you now have a little computer that is a nice combo of ever so old and brand new. 
 
-It's easy to [sound](/sound) and have a systemd command play it at startup.
+It's easy to take a [fabulous sound file](/sounds) and have a systemd command play it at startup.
  
 
 
