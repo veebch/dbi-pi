@@ -182,11 +182,10 @@ dtparam=i2s=on
 dtoverlay=hifiberry-dac
 ```
 
-reboot, and then test the speaker with:
-
-```speaker-test -c1 -twav -D hw:0,0```
-
 Congratulations, you now have a little computer that is a nice combo of ever so old and brand new. 
+
+It's easy to download a startup sound and have a systemd command play it at startup.
+ 
 
 
 
